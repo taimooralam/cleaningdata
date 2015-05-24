@@ -13,21 +13,29 @@ To dos:
 2.  Extract the mean and the standard deviation
 	overallSets = rbind(means = colMeans(overallSet))
 
+	```
 	library(matrixStats)
 	overallSets = rbind(std = colSds(matrixStats))
+	```
 
 3. Adding the labels by running the cbind command
 
-	trainLabels = cbind(trainLabels, activity_label = activitylabels$V2);
-	testLabels = cbind(testLabels, activity_label = activitylabels$V2);
+```
+    trainLabels = cbind(trainLabels, activity_label = activitylabels$V2);
+    testLabels = cbind(testLabels, activity_label = activitylabels$V2);
+```
 
 4. Read the activity labels from the traiing and test files and merge them
 
+```
 	activitylabels <- read.table(file = "./data/UCI HAR Dataset/activity_labels.txt");
 	trainLabels <-read.table(file = "./data/UCI HAR Dataset/y_train.txt")
 	testLabels <-read.table(file = "./data/UCI HAR Dataset/y_test.txt")
+```
 
 5. add the names to the columns in the activity labels
 
+```
 	trainLabels = cbind(trainLabels, activity_label = activitylabels$V2);
 	testLabels = cbind(testLabels, activity_label = activitylabels$V2);
+```
