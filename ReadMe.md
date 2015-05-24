@@ -4,13 +4,21 @@ To dos:
 	- test set is contained in the file: UCI HAR Dataset/train/X_test.txt
 	- read the both the files into a list using data.table
 	- add a new label to each train and test set: "train" and "test" respectively
-		testset = cbind(testset , label = "test")
-		trainset = cbind(trainset , label = "train")
+
+```
+	testset = cbind(testset , label = "test")
+	trainset = cbind(trainset , label = "train")
+```
 	- merge the two datasets into one
+```
 		overallSet = mapply(cbind, testset, trainset, SIMPLIFY=FALSE)
+```
 	- write the merged data to a csv file
+```
 		write.csv(overallSet, file = ".~/UCI HAR Dataset/merge/mergedDataSet.csv")
-2.	Extract the mean and the standard deviation
+```
+
+2.Extract the mean and the standard deviation
 	overallSets = rbind(means = colMeans(overallSet))
 
 ```
