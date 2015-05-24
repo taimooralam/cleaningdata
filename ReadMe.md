@@ -10,22 +10,22 @@ To dos:
 		overallSet = mapply(cbind, testset, trainset, SIMPLIFY=FALSE)
 	- write the merged data to a csv file
 		write.csv(overallSet, file = ".~/UCI HAR Dataset/merge/mergedDataSet.csv")
-2.  Extract the mean and the standard deviation
+2.	Extract the mean and the standard deviation
 	overallSets = rbind(means = colMeans(overallSet))
 
-	```
+```
 	library(matrixStats)
 	overallSets = rbind(std = colSds(matrixStats))
-	```
+```
 
-3. Adding the labels by running the cbind command
+3.Adding the labels by running the cbind command
 
 ```
     trainLabels = cbind(trainLabels, activity_label = activitylabels$V2);
     testLabels = cbind(testLabels, activity_label = activitylabels$V2);
 ```
 
-4. Read the activity labels from the traiing and test files and merge them
+4.Read the activity labels from the traiing and test files and merge them
 
 ```
 	activitylabels <- read.table(file = "./data/UCI HAR Dataset/activity_labels.txt");
@@ -33,7 +33,7 @@ To dos:
 	testLabels <-read.table(file = "./data/UCI HAR Dataset/y_test.txt")
 ```
 
-5. add the names to the columns in the activity labels
+5.add the names to the columns in the activity labels
 
 ```
 	trainLabels = cbind(trainLabels, activity_label = activitylabels$V2);
